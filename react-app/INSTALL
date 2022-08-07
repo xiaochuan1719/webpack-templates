@@ -1,0 +1,5 @@
+pnpm add -D webpack webpack-cli webpack-dev-server
+
+npm init @eslint/config
+
+pnpm add -D less-loader sass-loader style-loader
