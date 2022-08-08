@@ -13,6 +13,7 @@ module.exports = {
   extends: ['eslint:recommended', 'plugin:react/recommended', 'plugin:prettier/recommended'],
   plugins: ['react'],
   rules: {
+    'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
   },
   settings: {

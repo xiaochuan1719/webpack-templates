@@ -1,15 +1,16 @@
 const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
-const paths = require('./config/paths');
-const getClientEnvironment = require('./config/env');
-const createEnvironmentHash = require('./config/createEnvironmentHash');
+const paths = require('./paths');
+const getClientEnvironment = require('./env');
+const createEnvironmentHash = require('./createEnvironmentHash');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const WebpackBar = require('webpackbar');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
@@ -541,6 +542,7 @@ module.exports = (webpackEnv) => {
       ].filter(Boolean),
     },
     plugins: [
+      new WebpackBar(),
       // Generates an `index.html` file with the <script> injected.
       new HtmlWebpackPlugin(
         Object.assign(
