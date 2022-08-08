@@ -185,6 +185,7 @@ module.exports = (webpackEnv) => {
       : isEnvDevelopment && 'cheap-module-source-map',
     entry: paths.appIndexJs,
     output: {
+      clean: true,
       path: paths.appBuild,
       // Add /* filename */ comments to generated require()s in the output.
       pathinfo: isEnvDevelopment,
