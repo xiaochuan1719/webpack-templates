@@ -10,7 +10,12 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  extends: ['eslint:recommended', 'plugin:react/recommended', 'plugin:prettier/recommended'],
+  extends: [
+    'eslint:recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:react/recommended',
+    'plugin:prettier/recommended',
+  ],
   plugins: ['react'],
   rules: {
     'react/jsx-uses-react': 'off',
